@@ -60,8 +60,62 @@ extract($content);
             <div class="jumbotron">
                 <h1 class="display-4"><?= $tagline ?></h2>
                 <p><?= $description ?></p>
-                <p><a class="btn btn-default" href="mailto:<?= $email ?>" role="button">Contactez-moi &raquo;</a></p>
+                <p><a class="btn btn-default" href="mailto:<?= $email ?>" role="button">Contactez-moi</a></p>
             </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <p><?= $address ?></p>
+                    <p><?= $phone ?></p>
+                    <p><a href="mailto:<?= $email ?>"><?= $email ?></a></p>
+                </div>
+                <div class="col-sm-6">
+                    <p><?= $birth ?></p>
+                    <p><?= $nationality ?></p>
+                    <p><?= $driverLicense ?></p>
+                    <p><?= $disponibility ?></p>
+                </div>
+            </div>
+
+            <!-- Study -->
+            <h3><?= $studyTitle ?></h3>
+            <?php foreach ($studySteps as $date => $step): ?><div class="row">
+                <div class="col-sm-3"><?= $date ?></div>
+                <div class="col-sm-9"><?= $step ?></div>
+            </div>
+            <?php endforeach; ?>
+
+            <!-- Professional -->
+            <h3><?= $professionalTitle ?></h3>
+            <?php foreach ($professionalSteps as $date => $step): ?><div class="row">
+                <div class="col-sm-3"><?= $date ?></div>
+                <div class="col-sm-9"><?= $step ?></div>
+                </div>
+            <?php endforeach; ?>
+
+            <!-- Languages -->
+            <h3><?= $languageTitle ?></h3>
+            <?php foreach ($languageSteps as $date => $step): ?><div class="row">
+                <div class="col-sm-3"><?= $date ?></div>
+                <div class="col-sm-9"><?= $step ?></div>
+                </div>
+            <?php endforeach; ?>
+
+            <!-- IT -->
+            <h3><?= $itTitle ?></h3>
+            <p><?= $itContent ?></p>
+
+            <!-- Volunteer -->
+            <h3><?= $volunteerTitle ?></h3>
+            <?php foreach ($languageSteps as $date => $step): ?><div class="row">
+                <div class="col-sm-3"><?= $date ?></div>
+                <div class="col-sm-9"><?= $step ?></div>
+                </div>
+            <?php endforeach; ?>
+
+            <!-- Interest -->
+            <h3><?= $interestTitle ?></h3>
+            <p><?= $interestContent ?></p>
         </div> <!-- /container -->
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

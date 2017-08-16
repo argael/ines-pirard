@@ -11,7 +11,6 @@ return [
     'title' => "Inès Pirard",
     'tagline' => "Je suis faite pour ce job",
     'description' => "Je voulais vous dire bonjour car je vous aime déjà.",
-    'email' => "ines.pirard@passtech.be",
 
     // HEAD
     'favicon' => false,
@@ -27,4 +26,58 @@ return [
         'width' => '512px',
         'height' => '512px',
     ],
+
+    // About
+    'address' => 'Rue du château d’eau, 18,<br>4470 Saint-Georges',
+    'phone' => '0497 / 72.32.04',
+    'email' => 'ines.pirard@gmail.com',
+    'birth' => 'Née à Rocourt, le 14/02/1980',
+    'nationality' => 'Nationalité belge',
+    'driverLicense' => 'Permis de conduire catg. B',
+    'disponibility' => 'Disponible immédiatement',
+
+    // Study
+    'studyTitle' => 'Etudes',
+    'studySteps' => [
+        '2005 à 2008' => 'Baccalauréat Instituteur primaire à la haute école ISELL Sainte-Croix Catégorie pédagogique ; section normale primaire. <br>Diplôme délivré le 26 juin 2008',
+        '1992 à 1998' => 'Humanités au collège St Joseph de Chênée – Secondaire générale Options : sciences, math, langue (anglais) <br>Diplôme délivré le 30-06 1998',
+    ],
+
+    // Formations
+    'formationTitle' => 'Formation complémentaire',
+    'formationSteps' => [
+        '2000'  => 'Homologation des brevets nationaux d’instructeur automobile',
+    ],
+
+    // Professional
+    'professionalTitle' => 'Expérience professionnelle',
+    'professionalSteps' => [
+        '2015-2017' =>  'enseignante primaire statutaire',
+        '2008-2015' =>  'enseignante primaire polyvalente',
+        '2004'  =>  'tests qualités et rédaction de la documentation du CMS « Papyrix » pour Valain S.A. (société de développement web au Luxembourg)',
+        '2001 à 2003'   =>  'Monitrice en auto-école : cours pratiques et théoriques travaux de secrétariat (gestion des appels et des horaires des moniteurs, encodage des factures, traitement des dossiers clients)',
+    ],
+
+    // Languages
+    'languageTitle' => 'Langues',
+    'languageSteps' => [
+        'Français'  =>  'Langue maternelle : rédaction aisée, très bonne orthographe',
+        'Anglais'   =>  'Bonne connaissance écrite et orale',
+    ],
+
+    // IT
+    'itTitle' => 'Informatique',
+    'itContent' => "Suite bureautique MS Office : Word (très bon niveau), Excel (utilisation courante), Internet : discussion quotidienne autour des métiers du web et du développement. CMS et Outil de mailing: notions.",
+
+    // Volunteer
+    'volunteerTitle' => 'Bénévolat',
+    'volunteerSteps' => [
+        'Depuis 2011'   =>  'Responsable de la gestion des bénévoles au sein du comité d’organisation du festival des Anthinoises (analyse des besoins pour chaque poste, organisation des équipes et des horaires, mailing aux bénévoles).',
+        '2000 – 2005'   =>  'Responsable de la gestion des bénévoles au sein de l’A.S.B.L. des Responsible Young Drivers.',
+    ],
+
+    // Personnal interest
+    'interestTitle' => 'Centres d\'intérêt',
+    'interestContent' => "Travaux manuels de tout type (de la broderie à la pâtisserie en passant par la plomberie)",
+
 ];
