@@ -6,7 +6,7 @@
  * @author Thierry Lagasse <thierry@passtech.be>
  * @since July 2017
  */
-$content  = include_once('content/main.php');
+$content  = include_once('contents/main.php');
 extract($content);
 ?>
 
@@ -48,11 +48,14 @@ extract($content);
         <link rel="stylesheet" href="css/master.css">
     </head>
     <body>
-        <div class="container-fluid">
+        <div class="container">
             <div class="header clearfix">
                 <nav>
                     <ul class="nav nav-pills float-right">
-                        <li class="nav-item"><a class="nav-link" href="mailto:ines.pirard@passtech.be">Contact</a></li>
+                        <?php foreach ($navigation as $key => $label): ?><li class="nav-item">
+                            <a href="#<?= $key ?>" class="nav-link"><?= $label ?></a>
+                        </li>
+                        <?php endforeach; ?>
                     </ul>
                 </nav>
                 <h3 class="text-muted"><?= $title ?></h3>
@@ -65,110 +68,96 @@ extract($content);
             </div>
 
 
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title"><i class="fa fa-address-book-o"></i> <?= $aboutTitle ?></h3>
+            <div class="page-header">
+                <h3><i class="fa fa-address-book-o"></i> <?= $aboutTitle ?></h3>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <strong>Inès Pirard</strong>
+                    <address><?= $address ?></address>
+                    <p>
+                        <i class="fa fa-phone"></i>&nbsp;
+                        <?php if($phoneUrl): ?><a href="tel:<?= $phoneUrl ?>"><?= $phone ?></a>
+                        <?php else: ?><?= $phone ?><?php endif; ?>
+                        <br>
+                        <i class="fa fa-envelope"></i>&nbsp;
+                        <a href="mailto:<?= $email ?>"><?= $email ?></a>
+                    </p>
                 </div>
-                <div class="panel-body">
-
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <strong>Inès Pirard</strong>
-                            <address><?= $address ?></address>
-                            <p>
-                                <i class="fa fa-phone"></i>&nbsp;
-                                <?php if($phoneUrl): ?><a href="tel:<?= $phoneUrl ?>"><?= $phone ?></a>
-                                <?php else: ?><?= $phone ?><?php endif; ?>
-                                <br>
-                                <i class="fa fa-envelope"></i>&nbsp;
-                                <a href="mailto:<?= $email ?>"><?= $email ?></a>
-                            </p>
-                        </div>
-                        <div class="col-sm-6">
-                            <ul>
-                                <li><?= $birth ?></li>
-                                <li><?= $nationality ?></li>
-                                <li><?= $driverLicense ?></li>
-                                <li><?= $disponibility ?></li>
-                            </ul>
-                        </div>
-                    </div>
+                <div class="col-sm-6">
+                    <ul>
+                        <li><?= $birth ?></li>
+                        <li><?= $nationality ?></li>
+                        <li><?= $driverLicense ?></li>
+                        <li><?= $disponibility ?></li>
+                    </ul>
                 </div>
             </div>
+
 
             <!-- Study -->
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title"><i class="fa fa-graduation-cap"></i> <?= $studyTitle ?></h3>
-                </div>
-                <div class="panel-body">
-                    <dl class="dl-horizontal"><?php foreach ($studySteps as $date => $step): ?>
-                        <dt><?= $date ?></dt>
-                        <dd><?= $step ?></dd>
-                    <?php endforeach; ?>
-                    </dl>
-                </div>
+            <div class="page-header">
+                <h3><i class="fa fa-graduation-cap"></i> <?= $studyTitle ?></h3>
             </div>
+            <dl class="dl-horizontal"><?php foreach ($studySteps as $date => $step): ?>
+                <dt><?= $date ?></dt>
+                <dd><?= $step ?></dd>
+            <?php endforeach; ?>
+            </dl>
+
+            <!-- Formation -->
+            <div class="page-header">
+                <h3><i class="fa fa-paper-plane-o"></i> <?= $formationTitle ?></h3>
+            </div>
+            <p><?= $formationContent ?></p>
 
             <!-- Professional -->
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title"><i class="fa fa-briefcase"></i> <?= $professionalTitle ?></h3>
-                </div>
-                <div class="panel-body">
-                    <dl class="dl-horizontal"><?php foreach ($professionalSteps as $date => $step): ?>
-                        <dt><?= $date ?></dt>
-                        <dd><?= $step ?></dd>
-                    <?php endforeach; ?>
-                </div>
+            <div class="page-header">
+                <h3><i class="fa fa-briefcase"></i> <?= $professionalTitle ?></h3>
             </div>
+            <div class="panel-body">
+                <dl class="dl-horizontal"><?php foreach ($professionalSteps as $date => $step): ?>
+                    <dt><?= $date ?></dt>
+                    <dd><?= $step ?></dd>
+                <?php endforeach; ?>
+            </div>
+
 
             <!-- Languages -->
-
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title"><i class="fa fa-comments-o"></i> <?= $languageTitle ?></h3>
-                </div>
-                <div class="panel-body">
-                    <dl class="dl-horizontal"><?php foreach ($languageSteps as $date => $step): ?>
-                        <dt><?= $date ?></dt>
-                        <dd><?= $step ?></dd>
-                    <?php endforeach; ?>
-                </div>
+            <div class="page-header">
+                <h3><i class="fa fa-comments-o"></i> <?= $languageTitle ?></h3>
             </div>
+            <div class="panel-body">
+                <dl class="dl-horizontal"><?php foreach ($languageSteps as $date => $step): ?>
+                    <dt><?= $date ?></dt>
+                    <dd><?= $step ?></dd>
+                <?php endforeach; ?>
+            </div>
+
 
             <!-- IT -->
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title"><i class="fa fa-code"></i> <?= $itTitle ?></h3>
-                </div>
-                <div class="panel-body">
-                    <p><?= $itContent ?></p>
-                </div>
+            <div class="page-header">
+                <h3><i class="fa fa-code"></i> <?= $itTitle ?></h3>
             </div>
+            <p><?= $itContent ?></p>
+
 
             <!-- Volunteer -->
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title"><i class="fa fa-hand-spock-o"></i> <?= $volunteerTitle ?></h3>
-                </div>
-                <div class="panel-body">
-                    <dl class="dl-horizontal"><?php foreach ($volunteerSteps as $date => $step): ?>
-                        <dt><?= $date ?></dt>
-                        <dd><?= $step ?></dd>
-                    <?php endforeach; ?>
-                </div>
+            <div class="page-header">
+                <h3><i class="fa fa-hand-spock-o"></i> <?= $volunteerTitle ?></h3>
             </div>
+            <dl class="dl-horizontal"><?php foreach ($volunteerSteps as $date => $step): ?>
+                <dt><?= $date ?></dt>
+                <dd><?= $step ?></dd>
+            <?php endforeach; ?>
+
 
             <!-- Interest -->
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title"><i class="fa fa-birthday-cake"></i> <?= $interestTitle ?></h3>
-                </div>
-                <div class="panel-body">
-                    <p><?= $interestContent ?></p>
-                </div>
+            <div class="page-header">
+                <h3><i class="fa fa-birthday-cake"></i> <?= $interestTitle ?></h3>
             </div>
+            <p><?= $interestContent ?></p>
+
 
             <div class="panel">
                 <div class="panel-body">

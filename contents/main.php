@@ -28,6 +28,14 @@ return [
         'height' => '512px',
     ],
 
+    // Navigation
+    'navigation' => [
+        'about' => 'A propos',
+        'study' => 'Etudes',
+        'professional' => 'Expériences',
+        'contact' => 'Contact',
+    ],
+
     // About
     'aboutTitle' => 'A propos',
     'address' => 'Rue du château d’eau, 18,<br>4470 Saint-Georges',
