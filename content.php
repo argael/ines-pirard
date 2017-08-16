@@ -9,20 +9,21 @@
 
 return [
     'title' => "Inès Pirard",
-    'tagline' => "Je suis faite pour ce job",
-    'description' => "Je voulais vous dire bonjour car je vous aime déjà.",
+    'tagline' => "I wanna be a Scottish",
+    'description' => "",
 
     // HEAD
     'favicon' => false,
     'metaTitle' => false,
     'metaDescription' => false,
+    'metaImage' => 'https://passtech.be/ines/img/scottish.png',
     'metaAuthors' => "Ines Pirard (Text and Form), Thierry Lagasse (Code)",
     'twitterAuthor' => '@akarun',
     'twitterImage' => [
-        'url' => '/img/scottish.png',
+        'url' => 'https://passtech.be/ines/img/scottish.png',
     ],
     'facebookImage' => [
-        'url' => '/img/scottish.png',
+        'url' => 'https://passtech.be/ines/img/scottish.png',
         'width' => '512px',
         'height' => '512px',
     ],
@@ -42,7 +43,7 @@ return [
     'studyTitle' => 'Etudes',
     'studySteps' => [
         '2005 à 2008' => 'Baccalauréat Instituteur primaire à la haute école ISELL Sainte-Croix Catégorie pédagogique ; section normale primaire. <br>Diplôme délivré le 26 juin 2008',
-        '1992 à 1998' => 'Humanités au collège St Joseph de Chênée – Secondaire générale Options : sciences, math, langue (anglais) <br>Diplôme délivré le 30-06 1998',
+        '1992 à 1998' => 'Humanités au collège St Joseph de Chênée – Secondaire générale <br>Options : sciences, math, langue (anglais) <br>Diplôme délivré le 30-06 1998',
     ],
 
     // Formations
@@ -69,7 +70,7 @@ return [
 
     // IT
     'itTitle' => 'Informatique',
-    'itContent' => "Suite bureautique MS Office : Word (très bon niveau), Excel (utilisation courante), Internet : discussion quotidienne autour des métiers du web et du développement. CMS et Outil de mailing: notions.",
+    'itContent' => "Suite bureautique MS Office : Word (très bon niveau), Excel (utilisation courante), Internet : discussion quotidienne autour des métiers du web et du développement. <br>CMS et Outil de mailing (Mailchimp): notions.",
 
     // Volunteer
     'volunteerTitle' => 'Bénévolat',

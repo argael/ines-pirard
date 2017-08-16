@@ -43,9 +43,9 @@ extract($content);
         <meta property="og:image:height" content="<?= $facebookImage['height'] ?>">
         <?php endif; ?>
 
-        <link rel="stylesheet" href="/css/bootstrap.min.css">
-        <link rel="stylesheet" href="/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/css/master.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/master.css">
     </head>
     <body>
         <div class="container-fluid">
@@ -59,9 +59,9 @@ extract($content);
             </div>
 
             <div class="jumbotron">
-                <h1 class="display-4"><?= $tagline ?></h2>
+                <img src="<?= $metaImage ?>" alt="<?= $tagline ?>" class="img-circle" width="128px" height="128px">
+                <h2 class="display-4"><?= $tagline ?></h2>
                 <p><?= $description ?></p>
-                <p><a class="btn btn-default" href="mailto:<?= $email ?>" role="button">Contactez-moi</a></p>
             </div>
 
 
@@ -73,20 +73,24 @@ extract($content);
 
                     <div class="row">
                         <div class="col-sm-6">
-                            <p><?= $address ?></p>
-                            <p><?php if($phoneUrl): ?>
-                                    <a href="tel:<?= $phoneUrl ?>"><?= $phone ?></a>
-                                <?php else: ?>
-                                    <?= $phone ?>
-                                <?php endif; ?>
+                            <strong>Inès Pirard</strong>
+                            <address><?= $address ?></address>
+                            <p>
+                                <i class="fa fa-phone"></i>&nbsp;
+                                <?php if($phoneUrl): ?><a href="tel:<?= $phoneUrl ?>"><?= $phone ?></a>
+                                <?php else: ?><?= $phone ?><?php endif; ?>
+                                <br>
+                                <i class="fa fa-envelope"></i>&nbsp;
+                                <a href="mailto:<?= $email ?>"><?= $email ?></a>
                             </p>
-                            <p><a href="mailto:<?= $email ?>"><?= $email ?></a></p>
                         </div>
                         <div class="col-sm-6">
-                            <p><?= $birth ?></p>
-                            <p><?= $nationality ?></p>
-                            <p><?= $driverLicense ?></p>
-                            <p><?= $disponibility ?></p>
+                            <ul>
+                                <li><?= $birth ?></li>
+                                <li><?= $nationality ?></li>
+                                <li><?= $driverLicense ?></li>
+                                <li><?= $disponibility ?></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -98,11 +102,11 @@ extract($content);
                     <h3 class="panel-title"><i class="fa fa-graduation-cap"></i> <?= $studyTitle ?></h3>
                 </div>
                 <div class="panel-body">
-                    <?php foreach ($studySteps as $date => $step): ?><div class="row">
-                        <div class="col-sm-3"><strong><?= $date ?></strong></div>
-                        <div class="col-sm-9"><?= $step ?></div>
-                    </div>
+                    <dl class="dl-horizontal"><?php foreach ($studySteps as $date => $step): ?>
+                        <dt><?= $date ?></dt>
+                        <dd><?= $step ?></dd>
                     <?php endforeach; ?>
+                    </dl>
                 </div>
             </div>
 
@@ -112,10 +116,9 @@ extract($content);
                     <h3 class="panel-title"><i class="fa fa-briefcase"></i> <?= $professionalTitle ?></h3>
                 </div>
                 <div class="panel-body">
-                    <?php foreach ($professionalSteps as $date => $step): ?><div class="row">
-                        <div class="col-sm-3"><strong><?= $date ?></strong></div>
-                        <div class="col-sm-9"><?= $step ?></div>
-                        </div>
+                    <dl class="dl-horizontal"><?php foreach ($professionalSteps as $date => $step): ?>
+                        <dt><?= $date ?></dt>
+                        <dd><?= $step ?></dd>
                     <?php endforeach; ?>
                 </div>
             </div>
@@ -127,10 +130,9 @@ extract($content);
                     <h3 class="panel-title"><i class="fa fa-comments-o"></i> <?= $languageTitle ?></h3>
                 </div>
                 <div class="panel-body">
-                    <?php foreach ($languageSteps as $date => $step): ?><div class="row">
-                        <div class="col-sm-3"><strong><?= $date ?></strong></div>
-                        <div class="col-sm-9"><?= $step ?></div>
-                        </div>
+                    <dl class="dl-horizontal"><?php foreach ($languageSteps as $date => $step): ?>
+                        <dt><?= $date ?></dt>
+                        <dd><?= $step ?></dd>
                     <?php endforeach; ?>
                 </div>
             </div>
@@ -151,10 +153,9 @@ extract($content);
                     <h3 class="panel-title"><i class="fa fa-hand-spock-o"></i> <?= $volunteerTitle ?></h3>
                 </div>
                 <div class="panel-body">
-                    <?php foreach ($languageSteps as $date => $step): ?><div class="row">
-                        <div class="col-sm-3"><strong><?= $date ?></strong></div>
-                        <div class="col-sm-9"><?= $step ?></div>
-                        </div>
+                    <dl class="dl-horizontal"><?php foreach ($volunteerSteps as $date => $step): ?>
+                        <dt><?= $date ?></dt>
+                        <dd><?= $step ?></dd>
                     <?php endforeach; ?>
                 </div>
             </div>
@@ -168,6 +169,16 @@ extract($content);
                     <p><?= $interestContent ?></p>
                 </div>
             </div>
+
+            <div class="panel">
+                <div class="panel-body">
+                    <a class="btn btn-lg btn-primary" href="mailto:<?= $email ?>">
+                        <i class="fa fa-mail"></i> Contactez-moi
+                    </a>
+                </div>
+            </div>
+
+
         </div> <!-- /container -->
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
