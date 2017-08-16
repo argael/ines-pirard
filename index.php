@@ -43,11 +43,12 @@ extract($content);
         <meta property="og:image:height" content="<?= $facebookImage['height'] ?>">
         <?php endif; ?>
 
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/font-awesome.min.css">
         <link rel="stylesheet" href="/css/master.css">
     </head>
     <body>
-        <div class="container">
+        <div class="container-fluid">
             <div class="header clearfix">
                 <nav>
                     <ul class="nav nav-pills float-right">
@@ -63,59 +64,110 @@ extract($content);
                 <p><a class="btn btn-default" href="mailto:<?= $email ?>" role="button">Contactez-moi</a></p>
             </div>
 
-            <div class="row">
-                <div class="col-sm-6">
-                    <p><?= $address ?></p>
-                    <p><?= $phone ?></p>
-                    <p><a href="mailto:<?= $email ?>"><?= $email ?></a></p>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><i class="fa fa-address-book-o"></i> <?= $aboutTitle ?></h3>
                 </div>
-                <div class="col-sm-6">
-                    <p><?= $birth ?></p>
-                    <p><?= $nationality ?></p>
-                    <p><?= $driverLicense ?></p>
-                    <p><?= $disponibility ?></p>
+                <div class="panel-body">
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <p><?= $address ?></p>
+                            <p><?php if($phoneUrl): ?>
+                                    <a href="tel:<?= $phoneUrl ?>"><?= $phone ?></a>
+                                <?php else: ?>
+                                    <?= $phone ?>
+                                <?php endif; ?>
+                            </p>
+                            <p><a href="mailto:<?= $email ?>"><?= $email ?></a></p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p><?= $birth ?></p>
+                            <p><?= $nationality ?></p>
+                            <p><?= $driverLicense ?></p>
+                            <p><?= $disponibility ?></p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <!-- Study -->
-            <h3><?= $studyTitle ?></h3>
-            <?php foreach ($studySteps as $date => $step): ?><div class="row">
-                <div class="col-sm-3"><?= $date ?></div>
-                <div class="col-sm-9"><?= $step ?></div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><i class="fa fa-graduation-cap"></i> <?= $studyTitle ?></h3>
+                </div>
+                <div class="panel-body">
+                    <?php foreach ($studySteps as $date => $step): ?><div class="row">
+                        <div class="col-sm-3"><strong><?= $date ?></strong></div>
+                        <div class="col-sm-9"><?= $step ?></div>
+                    </div>
+                    <?php endforeach; ?>
+                </div>
             </div>
-            <?php endforeach; ?>
 
             <!-- Professional -->
-            <h3><?= $professionalTitle ?></h3>
-            <?php foreach ($professionalSteps as $date => $step): ?><div class="row">
-                <div class="col-sm-3"><?= $date ?></div>
-                <div class="col-sm-9"><?= $step ?></div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><i class="fa fa-briefcase"></i> <?= $professionalTitle ?></h3>
                 </div>
-            <?php endforeach; ?>
+                <div class="panel-body">
+                    <?php foreach ($professionalSteps as $date => $step): ?><div class="row">
+                        <div class="col-sm-3"><strong><?= $date ?></strong></div>
+                        <div class="col-sm-9"><?= $step ?></div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
 
             <!-- Languages -->
-            <h3><?= $languageTitle ?></h3>
-            <?php foreach ($languageSteps as $date => $step): ?><div class="row">
-                <div class="col-sm-3"><?= $date ?></div>
-                <div class="col-sm-9"><?= $step ?></div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><i class="fa fa-comments-o"></i> <?= $languageTitle ?></h3>
                 </div>
-            <?php endforeach; ?>
+                <div class="panel-body">
+                    <?php foreach ($languageSteps as $date => $step): ?><div class="row">
+                        <div class="col-sm-3"><strong><?= $date ?></strong></div>
+                        <div class="col-sm-9"><?= $step ?></div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
 
             <!-- IT -->
-            <h3><?= $itTitle ?></h3>
-            <p><?= $itContent ?></p>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><i class="fa fa-code"></i> <?= $itTitle ?></h3>
+                </div>
+                <div class="panel-body">
+                    <p><?= $itContent ?></p>
+                </div>
+            </div>
 
             <!-- Volunteer -->
-            <h3><?= $volunteerTitle ?></h3>
-            <?php foreach ($languageSteps as $date => $step): ?><div class="row">
-                <div class="col-sm-3"><?= $date ?></div>
-                <div class="col-sm-9"><?= $step ?></div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><i class="fa fa-hand-spock-o"></i> <?= $volunteerTitle ?></h3>
                 </div>
-            <?php endforeach; ?>
+                <div class="panel-body">
+                    <?php foreach ($languageSteps as $date => $step): ?><div class="row">
+                        <div class="col-sm-3"><strong><?= $date ?></strong></div>
+                        <div class="col-sm-9"><?= $step ?></div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
 
             <!-- Interest -->
-            <h3><?= $interestTitle ?></h3>
-            <p><?= $interestContent ?></p>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><i class="fa fa-birthday-cake"></i> <?= $interestTitle ?></h3>
+                </div>
+                <div class="panel-body">
+                    <p><?= $interestContent ?></p>
+                </div>
+            </div>
         </div> <!-- /container -->
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

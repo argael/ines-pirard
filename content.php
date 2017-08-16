@@ -28,13 +28,15 @@ return [
     ],
 
     // About
+    'aboutTitle' => 'A propos',
     'address' => 'Rue du château d’eau, 18,<br>4470 Saint-Georges',
-    'phone' => '0497 / 72.32.04',
+    'phone' => '+32 (0)497 / 72.32.04',
+    'phoneUrl' => '+32497723204',
     'email' => 'ines.pirard@gmail.com',
     'birth' => 'Née à Rocourt, le 14/02/1980',
     'nationality' => 'Nationalité belge',
     'driverLicense' => 'Permis de conduire catg. B',
-    'disponibility' => 'Disponible immédiatement',
+    'disponibility' => '<strong>Disponible immédiatement</strong>',
 
     // Study
     'studyTitle' => 'Etudes',
