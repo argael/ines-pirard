@@ -10,19 +10,21 @@
 return [
     'title' => "Inès Pirard",
     'tagline' => "Je suis faite pour ce job",
-    'description' => "",
+    'description' => "Je voulais vous dire bonjour car je vous aime déjà.",
     'email' => "ines.pirard@passtech.be",
 
+    // HEAD
+    'favicon' => false,
     'metaTitle' => false,
     'metaDescription' => false,
     'metaAuthors' => "Ines Pirard (Text and Form), Thierry Lagasse (Code)",
-
+    'twitterAuthor' => '@akarun',
     'twitterImage' => [
-        'url' => '',
+        'url' => '/img/scottish.png',
     ],
     'facebookImage' => [
-        'url' => '',
-        'width' => false,
-        'height' => false,
+        'url' => '/img/scottish.png',
+        'width' => '512px',
+        'height' => '512px',
     ],
 ];

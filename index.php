@@ -22,8 +22,9 @@ extract($content);
         <?php endif; ?>
 
         <!-- Twitter -->
-        <meta name="twitter:site" content="@akarun">
-        <meta name="twitter:creator" content="@akarun">
+        <?php if($twitterAuthor): ?><meta name="twitter:site" content="<?= $twitterAuthor ?>">
+        <meta name="twitter:creator" content="<?= $twitterAuthor ?>">
+        <?php endif; ?>
         <meta name="twitter:card" content="summary">
         <meta name="twitter:title" content="<?= $metaTitle ?>">
         <meta name="twitter:description" content="<?= $metaDescription ?: $description ?>">
@@ -46,22 +47,22 @@ extract($content);
         <link rel="stylesheet" href="/css/master.css">
     </head>
     <body>
-    <div class="container">
-        <div class="header clearfix">
-            <nav>
-                <ul class="nav nav-pills float-right">
-                    <li class="nav-item"><a class="nav-link" href="mailto:ines.pirard@passtech.be">Contact</a></li>
-                </ul>
-            </nav>
-            <h3 class="text-muted"><?= $title ?></h3>
-        </div>
+        <div class="container">
+            <div class="header clearfix">
+                <nav>
+                    <ul class="nav nav-pills float-right">
+                        <li class="nav-item"><a class="nav-link" href="mailto:ines.pirard@passtech.be">Contact</a></li>
+                    </ul>
+                </nav>
+                <h3 class="text-muted"><?= $title ?></h3>
+            </div>
 
-        <div class="jumbotron">
-            <h1 class="display-4"><?= $tagline ?></h2>
-            <p><?= $description ?></p>
-            <p><a class="btn btn-default" href="mailto:<?= $email ?>" role="button">Contactez-moi &raquo;</a></p>
-        </div>
-    </div> <!-- /container -->
+            <div class="jumbotron">
+                <h1 class="display-4"><?= $tagline ?></h2>
+                <p><?= $description ?></p>
+                <p><a class="btn btn-default" href="mailto:<?= $email ?>" role="button">Contactez-moi &raquo;</a></p>
+            </div>
+        </div> <!-- /container -->
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
