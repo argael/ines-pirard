@@ -13,7 +13,16 @@ return [
     'description' => "",
     'email' => "ines.pirard@passtech.be",
 
-    'metaTitle' => "",
-    'metaDescription' => "",
-    'metaAuthors' => "Ines Pirard (Text and Form) and Thierry Lagasse (Code)"
+    'metaTitle' => false,
+    'metaDescription' => false,
+    'metaAuthors' => "Ines Pirard (Text and Form), Thierry Lagasse (Code)",
+
+    'twitterImage' => [
+        'url' => '',
+    ],
+    'facebookImage' => [
+        'url' => '',
+        'width' => false,
+        'height' => false,
+    ],
 ];
