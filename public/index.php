@@ -133,24 +133,23 @@ extract($sections);
             <div id="<?= $professionalId ?>" class="page-header">
                 <h3><i class="fa fa-briefcase"></i> <?= $professionalTitle ?></h3>
             </div>
-            <div class="panel-body">
-                <dl class="dl-horizontal"><?php foreach ($professionalSteps as $date => $step): ?>
-                    <dt><?= $date ?></dt>
-                    <dd><?= $step ?></dd>
-                <?php endforeach; ?>
-            </div>
+            <dl class="dl-horizontal"><?php foreach ($professionalSteps as $date => $step): ?>
+                <dt><?= $date ?></dt>
+                <dd><?= $step ?></dd>
+            <?php endforeach; ?>
+            </dl>
+
 
 
             <!-- Languages -->
             <div id="<?= $languageId ?>" class="page-header">
                 <h3><i class="fa fa-comments-o"></i> <?= $languageTitle ?></h3>
             </div>
-            <div class="panel-body">
-                <dl class="dl-horizontal"><?php foreach ($languageSteps as $date => $step): ?>
-                    <dt><?= $date ?></dt>
-                    <dd><?= $step ?></dd>
-                <?php endforeach; ?>
-            </div>
+            <dl class="dl-horizontal"><?php foreach ($languageSteps as $date => $step): ?>
+                <dt><?= $date ?></dt>
+                <dd><?= $step ?></dd>
+            <?php endforeach; ?>
+            </dl>
 
 
             <!-- IT -->
@@ -168,6 +167,7 @@ extract($sections);
                 <dt><?= $date ?></dt>
                 <dd><?= $step ?></dd>
             <?php endforeach; ?>
+            </dl>
 
 
             <!-- Interest -->
@@ -179,41 +179,18 @@ extract($sections);
 
         <div class="footer hidden-print">
             <div class="container panel" id="contact">
-                <div class="row">
+                <div class="row panel-body">
                     <div class="col-sm-8">
-                        <div class="panel-body">
-                            <h4>Envie d'en savoir plus ?</h4>
-                            <p>Vous pouvez utiliser le formulaire pour me contacter. Je reviendrai vers vous très vite.</p>
-                        </div>
-                        <div class="panel-footer">
-                            <form action="<?= $baseurl ?>" method="POST">
-                                <input type="text" class="hidden" name="yourname" value="">
-
-                                <div class="form-group">
-                                    <label for="youremail">Votre email</label>
-                                    <input type="email" class="form-control" id="youremail" name="youremail" placeholder="hire@awesome-company.com">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="yourmessage">Votre message</label>
-                                    <textarea class="form-control" id="yourmessage" name="yourmessage" rows="5"></textarea>
-                                </div>
-
-
-
-                                <button type="submit" class="btn btn-default">Envoyer</button>
-                            </form>
-                        </div>
+                        <h4>Garder mon CV sous la main ?</h4>
+                        <p>Téléchargez-le au format PDF.</p>
                     </div>
 
                     <div class="col-sm-4">
-                        <div class="panel-body text-center">
-                            <h4>Garder mon CV sous la main ?</h4>
-                            <p>Téléchargez-le au format PDF.</p>
+
                             <a class="btn btn-lg btn-default" href="<?= $baseurl ?>/cv.pdf">
                                 <i class="fa fa-file-pdf-o"></i> Téléchargez mon CV
                             </a>
-                        </div>
+
                     </div>
                 </div>
             </div>
