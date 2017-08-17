@@ -8,6 +8,7 @@
  */
 
 return [
+    'baseurl' => 'http://ines-pirard.be',
     'title' => "Inès Pirard",
     'tagline' => "wanna be a Scottish",
     'description' => "Dompter des licornes et des bisounours, c’est fait. Maintenant... J’aimerais un nouveau défi!",

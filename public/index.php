@@ -37,7 +37,7 @@ extract($sections);
         <?php endif; ?>
 
         <!-- Facebook -->
-        <meta property="og:url" content="https://passtech.be/ines_pirard">
+        <meta property="og:url" content="<?= $baseurl ?>">
         <meta property="og:title" content="<?= $metaTitle ?: $title ?>">
         <meta property="og:description" content="<?= $metaDescription ?: $description ?>">
         <meta property="og:type" content="website">
@@ -72,15 +72,13 @@ extract($sections);
             </div>
         </nav>
 
-        <div class="container-fluid">
-            <div class="jumbotron">
-                <img src="<?= $metaImage ?>" alt="<?= $tagline ?>" class="img-circle" width="128px" height="128px">
-                <h2 class="display-2">
-                    <span class="hidden visible-print-inline"><strong><?= $title ?></strong></span>
-                    <span class="hidden-print">I</span>&nbsp;<?= $tagline ?>
-                </h2>
-                <p><?= $description ?></p>
-            </div>
+        <div class="jumbotron">
+            <img src="<?= $metaImage ?>" alt="<?= $tagline ?>" class="img-circle" width="128px" height="128px">
+            <h2 class="display-2">
+                <span class="hidden visible-print-inline"><strong><?= $title ?></strong></span>
+                <span class="hidden-print">I</span>&nbsp;<?= $tagline ?>
+            </h2>
+            <p><?= $description ?></p>
         </div>
 
         <div class="container">
@@ -180,45 +178,45 @@ extract($sections);
         </div> <!-- /container -->
 
         <div class="footer hidden-print">
-        <div class="container panel">
-            <div class="row">
-                <div class="col-sm-8">
-                    <div class="panel-body">
-                        <h4>Envie d'en savoir plus ?</h4>
-                        <p>Vous pouvez utiliser le formulaire pour me contacter. Je reviendrai vers vous très vite.</p>
+            <div class="container panel" id="contact">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <div class="panel-body">
+                            <h4>Envie d'en savoir plus ?</h4>
+                            <p>Vous pouvez utiliser le formulaire pour me contacter. Je reviendrai vers vous très vite.</p>
+                        </div>
+                        <div class="panel-footer">
+                            <form action="<?= $baseurl ?>" method="POST">
+                                <input type="text" class="hidden" name="yourname" value="">
+
+                                <div class="form-group">
+                                    <label for="youremail">Votre email</label>
+                                    <input type="email" class="form-control" id="youremail" name="youremail" placeholder="hire@awesome-company.com">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="yourmessage">Votre message</label>
+                                    <textarea class="form-control" id="yourmessage" name="yourmessage" rows="5"></textarea>
+                                </div>
+
+
+
+                                <button type="submit" class="btn btn-default">Envoyer</button>
+                            </form>
+                        </div>
                     </div>
-                    <div class="panel-footer">
-                        <form action="" method="POST">
-                            <input type="text" class="hidden" name="yourname" value="">
 
-                            <div class="form-group">
-                                <label for="youremail">Votre email</label>
-                                <input type="email" class="form-control" id="youremail" name="youremail" placeholder="hire@awesome-company.com">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="yourmessage">Votre message</label>
-                                <textarea class="form-control" id="yourmessage" name="yourmessage" rows="5"></textarea>
-                            </div>
-
-
-
-                            <button type="submit" class="btn btn-default">Envoyer</button>
-                        </form>
-                    </div>
-                </div>
-
-                <div class="col-sm-4">
-                    <div class="panel-body text-center">
-                        <h4>Garder mon CV sous la main ?</h4>
-                        <p>Téléchargez-le au format PDF.</p>
-                        <a class="btn btn-lg btn-default" href="#">
-                            <i class="fa fa-file-pdf-o"></i> Téléchargez mon CV
-                        </a>
+                    <div class="col-sm-4">
+                        <div class="panel-body text-center">
+                            <h4>Garder mon CV sous la main ?</h4>
+                            <p>Téléchargez-le au format PDF.</p>
+                            <a class="btn btn-lg btn-default" href="<?= $baseurl ?>/cv.pdf">
+                                <i class="fa fa-file-pdf-o"></i> Téléchargez mon CV
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
         </div>
 
             <script src="js/main.js"></script>
