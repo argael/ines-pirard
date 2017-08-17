@@ -6,8 +6,13 @@
  * @author Thierry Lagasse <thierry@passtech.be>
  * @since July 2017
  */
-$content  = include_once('../contents/main.php');
+$content = include_once('../contents/main.php');
 extract($content);
+
+$sections = array_reduce(array_keys($navigation), function($sections, $key) {
+    return $sections + [$key.'Id' => $key];
+}, []);
+extract($sections);
 ?>
 
 <!DOCTYPE html>
@@ -47,8 +52,8 @@ extract($content);
         <link rel="stylesheet" href="css/font-awesome.min.css">
         <link rel="stylesheet" href="css/master.css">
     </head>
-    <body>
-        <nav class="navbar navbar-default">
+    <body data-spy="scroll" data-target="#navigation">
+        <nav id="navigation" class="navbar navbar-default">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
@@ -75,10 +80,10 @@ extract($content);
                 <h2 class="display-4"><?= $tagline ?></h2>
                 <p><?= $description ?></p>
             </div>
-            </div>
-        <div class="container">
+        </div>
 
-            <div class="page-header">
+        <div class="container">
+            <div id="<?= $aboutId ?>" class="page-header">
                 <h3><i class="fa fa-address-book-o"></i> <?= $aboutTitle ?></h3>
             </div>
             <div class="row">
@@ -106,7 +111,7 @@ extract($content);
 
 
             <!-- Study -->
-            <div class="page-header">
+            <div id="<?= $studyId ?>" class="page-header">
                 <h3><i class="fa fa-graduation-cap"></i> <?= $studyTitle ?></h3>
             </div>
             <dl class="dl-horizontal"><?php foreach ($studySteps as $date => $step): ?>
@@ -116,7 +121,7 @@ extract($content);
             </dl>
 
             <!-- Formation -->
-            <div class="page-header">
+            <div id="<?= $formationId ?>" class="page-header">
                 <h3><i class="fa fa-graduation-cap"></i> <?= $formationTitle ?></h3>
             </div>
             <dl class="dl-horizontal"><?php foreach ($formationSteps as $date => $step): ?>
@@ -126,7 +131,7 @@ extract($content);
             </dl>
 
             <!-- Professional -->
-            <div class="page-header">
+            <div id="<?= $professionalId ?>" class="page-header">
                 <h3><i class="fa fa-briefcase"></i> <?= $professionalTitle ?></h3>
             </div>
             <div class="panel-body">
@@ -138,7 +143,7 @@ extract($content);
 
 
             <!-- Languages -->
-            <div class="page-header">
+            <div id="<?= $languageId ?>" class="page-header">
                 <h3><i class="fa fa-comments-o"></i> <?= $languageTitle ?></h3>
             </div>
             <div class="panel-body">
@@ -150,14 +155,14 @@ extract($content);
 
 
             <!-- IT -->
-            <div class="page-header">
+            <div id="<?= $itId ?>" class="page-header">
                 <h3><i class="fa fa-code"></i> <?= $itTitle ?></h3>
             </div>
             <p><?= $itContent ?></p>
 
 
             <!-- Volunteer -->
-            <div class="page-header">
+            <div id="<?= $volunteerId ?>" class="page-header">
                 <h3><i class="fa fa-hand-spock-o"></i> <?= $volunteerTitle ?></h3>
             </div>
             <dl class="dl-horizontal"><?php foreach ($volunteerSteps as $date => $step): ?>
@@ -167,11 +172,10 @@ extract($content);
 
 
             <!-- Interest -->
-            <div class="page-header">
+            <div id="<?= $interestId ?>" class="page-header">
                 <h3><i class="fa fa-birthday-cake"></i> <?= $interestTitle ?></h3>
             </div>
             <p><?= $interestContent ?></p>
-
 
             <div class="panel">
                 <div class="panel-body">
@@ -181,11 +185,13 @@ extract($content);
                 </div>
             </div>
 
-
         </div> <!-- /container -->
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
-    <script>window.console.log("Made with love ♥ for Dogstudio 🐶")</script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        $('body').scrollspy({ target: '#navbar-example' });
+        window.console.log("Made with love ♥ for Dogstudio")
+    </script>
 </body>
 </html>
