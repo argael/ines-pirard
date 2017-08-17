@@ -107,9 +107,13 @@ extract($content);
 
             <!-- Formation -->
             <div class="page-header">
-                <h3><i class="fa fa-paper-plane-o"></i> <?= $formationTitle ?></h3>
+                <h3><i class="fa fa-graduation-cap"></i> <?= $formationTitle ?></h3>
             </div>
-            <p><?= $formationContent ?></p>
+            <dl class="dl-horizontal"><?php foreach ($formationSteps as $date => $step): ?>
+                    <dt><?= $date ?></dt>
+                    <dd><?= $step ?></dd>
+                <?php endforeach; ?>
+            </dl>
 
             <!-- Professional -->
             <div class="page-header">
