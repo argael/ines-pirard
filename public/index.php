@@ -48,25 +48,35 @@ extract($content);
         <link rel="stylesheet" href="css/master.css">
     </head>
     <body>
-        <div class="container">
-            <div class="header clearfix">
-                <nav>
-                    <ul class="nav nav-pills float-right">
-                        <?php foreach ($navigation as $key => $label): ?><li class="nav-item">
-                            <a href="#<?= $key ?>" class="nav-link"><?= $label ?></a>
-                        </li>
-                        <?php endforeach; ?>
-                    </ul>
-                </nav>
-                <h3 class="text-muted"><?= $title ?></h3>
+        <nav class="navbar navbar-default">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="mailto:<?= $email ?>"><?= $title ?></a>
             </div>
 
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <?php foreach ($navigation as $key => $label): ?><li class="nav-item">
+                        <a href="#<?= $key ?>" class="nav-link"><?= $label ?></a>
+                    </li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="container-fluid">
             <div class="jumbotron">
                 <img src="<?= $metaImage ?>" alt="<?= $tagline ?>" class="img-circle" width="128px" height="128px">
                 <h2 class="display-4"><?= $tagline ?></h2>
                 <p><?= $description ?></p>
             </div>
-
+            </div>
+        <div class="container">
 
             <div class="page-header">
                 <h3><i class="fa fa-address-book-o"></i> <?= $aboutTitle ?></h3>
