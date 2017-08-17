@@ -10,7 +10,7 @@
 return [
     'title' => "Inès Pirard",
     'tagline' => "I wanna be a Scottish",
-    'description' => "",
+    'description' => "Dompter des licornes et des bisounours, c’est fait. Maintenant...Je veux un nouveau défi!",
 
     // HEAD
     'favicon' => false,
