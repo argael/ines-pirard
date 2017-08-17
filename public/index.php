@@ -77,7 +77,7 @@ extract($sections);
                 <img src="<?= $metaImage ?>" alt="<?= $tagline ?>" class="img-circle" width="128px" height="128px">
                 <h2 class="display-2">
                     <span class="hidden visible-print-inline"><strong><?= $title ?></strong></span>
-                    <span class="hidden-print">I</span><?= $tagline ?>
+                    <span class="hidden-print">I</span>&nbsp;<?= $tagline ?>
                 </h2>
                 <p><?= $description ?></p>
             </div>
