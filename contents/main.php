@@ -79,8 +79,11 @@ return [
 
     // IT
     'itTitle' => 'Informatique',
-    'itContent' => "Suite bureautique MS Office : Word (très bon niveau), Excel (utilisation courante), Internet : discussion quotidienne autour des métiers du web et du développement. <br>CMS et Outil de mailing (Mailchimp): notions.",
-
+    'itSteps' => [
+        'Système d’exploitation' => "Windows, Mac OSX",
+        'Suite bureautique' => "MS Office : Word (très bon niveau), Excel (utilisation courante)",
+        'Internet' => "CMS et Outil de mailing (Mailchimp): notions. Discussions quotidiennes autour des métiers du web et du développement",
+    ],
     // Volunteer
     'volunteerTitle' => 'Bénévolat',
     'volunteerSteps' => [
@@ -89,7 +92,7 @@ return [
     ],
 
     // Personnal interest
-    'interestTitle' => 'Centres d\'intérêt',
-    'interestContent' => "Travaux manuels de tout type (de la broderie à la pâtisserie en passant par la plomberie)",
+    'interestTitle' => 'Centres d’intérêt',
+    'interestContent' => "Travaux manuels de tout type de la broderie à la pâtisserie en passant par la plomberie, marche, geocaching, lecture et pour mon côté Geek : Minecraft!",
 
 ];

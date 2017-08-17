@@ -156,7 +156,11 @@ extract($sections);
             <div id="<?= $itId ?>" class="page-header">
                 <h3><i class="fa fa-code"></i> <?= $itTitle ?></h3>
             </div>
-            <p><?= $itContent ?></p>
+            <dl class="dl-horizontal"><?php foreach ($itSteps as $date => $step): ?>
+                    <dt><?= $date ?></dt>
+                    <dd><?= $step ?></dd>
+                <?php endforeach; ?>
+            </dl>
 
 
             <!-- Volunteer -->
@@ -187,7 +191,7 @@ extract($sections);
 
                     <div class="col-sm-4">
 
-                            <a class="btn btn-lg btn-default" href="<?= $baseurl ?>/cv.pdf">
+                            <a class="btn btn-lg btn-default" href="<?= $baseurl ?>/ines-pirard-cv.pdf">
                                 <i class="fa fa-file-pdf-o"></i> Téléchargez mon CV
                             </a>
 
