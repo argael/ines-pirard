@@ -34,7 +34,7 @@ return [
         'about' => 'A propos',
         'study' => 'Etudes',
         'professional' => 'Expériences',
-        'contact' => 'Contact',
+        'contact' => 'Format PDF',
     ],
 
     // About
