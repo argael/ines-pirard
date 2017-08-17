@@ -121,7 +121,7 @@ extract($sections);
 
             <!-- Formation -->
             <div id="<?= $formationId ?>" class="page-header">
-                <h3><i class="fa fa-graduation-cap"></i> <?= $formationTitle ?></h3>
+                <h3><i class="fa fa-paper-plane"></i> <?= $formationTitle ?></h3>
             </div>
             <dl class="dl-horizontal"><?php foreach ($formationSteps as $date => $step): ?>
                     <dt><?= $date ?></dt>
