@@ -8,7 +8,7 @@
  */
 
 return [
-    'baseurl' => 'http://ines-pirard.be',
+    'baseurl' => 'https://ines-pirard.be',
     'title' => "Inès Pirard",
     'tagline' => "wanna be a Scottish",
     'description' => "Dompter des licornes et des bisounours, c’est fait. Maintenant... J’aimerais un nouveau défi!",
@@ -17,14 +17,14 @@ return [
     'favicon' => false,
     'metaTitle' => false,
     'metaDescription' => false,
-    'metaImage' => 'https://passtech.be/ines/img/scottish.png',
+    'metaImage' => 'https://ines-pirard.be/img/scottish.png',
     'metaAuthors' => "Ines Pirard (Text and Form), Thierry Lagasse (Code)",
     'twitterAuthor' => '@akarun',
     'twitterImage' => [
-        'url' => 'https://passtech.be/ines/img/scottish.png',
+        'url' => 'https://ines-pirard.be/img/scottish.png',
     ],
     'facebookImage' => [
-        'url' => 'https://passtech.be/ines/img/scottish.png',
+        'url' => 'https://ines-pirard.be/img/scottish.png',
         'width' => '512px',
         'height' => '512px',
     ],
