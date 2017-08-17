@@ -9,7 +9,7 @@
 
 return [
     'title' => "Inès Pirard",
-    'tagline' => "I wanna be a Scottish",
+    'tagline' => "wanna be a Scottish",
     'description' => "Dompter des licornes et des bisounours, c’est fait. Maintenant... J’aimerais un nouveau défi!",
 
     // HEAD

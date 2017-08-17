@@ -48,8 +48,6 @@ extract($sections);
         <meta property="og:image:height" content="<?= $facebookImage['height'] ?>">
         <?php endif; ?>
 
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/font-awesome.min.css">
         <link rel="stylesheet" href="css/master.css">
     </head>
     <body data-spy="scroll" data-target="#navigation">
@@ -77,7 +75,10 @@ extract($sections);
         <div class="container-fluid">
             <div class="jumbotron">
                 <img src="<?= $metaImage ?>" alt="<?= $tagline ?>" class="img-circle" width="128px" height="128px">
-                <h2 class="display-4"><?= $tagline ?></h2>
+                <h2 class="display-2">
+                    <span class="hidden visible-print-inline"><strong><?= $title ?></strong></span>
+                    <span class="hidden-print">I</span><?= $tagline ?>
+                </h2>
                 <p><?= $description ?></p>
             </div>
         </div>
@@ -176,22 +177,50 @@ extract($sections);
                 <h3><i class="fa fa-birthday-cake"></i> <?= $interestTitle ?></h3>
             </div>
             <p><?= $interestContent ?></p>
-
-            <div class="panel">
-                <div class="panel-body">
-                    <a class="btn btn-lg btn-primary" href="mailto:<?= $email ?>">
-                        <i class="fa fa-mail"></i> Contactez-moi
-                    </a>
-                </div>
-            </div>
-
         </div> <!-- /container -->
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script>
-        $('body').scrollspy({ target: '#navbar-example' });
-        window.console.log("Made with love ♥ for Dogstudio")
-    </script>
-</body>
+        <div class="footer hidden-print">
+        <div class="container panel">
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="panel-body">
+                        <h4>Envie d'en savoir plus ?</h4>
+                        <p>Vous pouvez utiliser le formulaire pour me contacter. Je reviendrai vers vous très vite.</p>
+                    </div>
+                    <div class="panel-footer">
+                        <form action="" method="POST">
+                            <input type="text" class="hidden" name="yourname" value="">
+
+                            <div class="form-group">
+                                <label for="youremail">Votre email</label>
+                                <input type="email" class="form-control" id="youremail" name="youremail" placeholder="hire@awesome-company.com">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="yourmessage">Votre message</label>
+                                <textarea class="form-control" id="yourmessage" name="yourmessage" rows="5"></textarea>
+                            </div>
+
+
+
+                            <button type="submit" class="btn btn-default">Envoyer</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="panel-body text-center">
+                        <h4>Garder mon CV sous la main ?</h4>
+                        <p>Téléchargez-le au format PDF.</p>
+                        <a class="btn btn-lg btn-default" href="#">
+                            <i class="fa fa-file-pdf-o"></i> Téléchargez mon CV
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+            <script src="js/main.js"></script>
+    </body>
 </html>
