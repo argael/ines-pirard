@@ -6,7 +6,7 @@
  * @author Thierry Lagasse <thierry@passtech.be>
  * @since July 2017
  */
-$content  = include_once('contents/main.php');
+$content  = include_once('../contents/main.php');
 extract($content);
 ?>
 
